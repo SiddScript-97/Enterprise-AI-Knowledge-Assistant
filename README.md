@@ -249,22 +249,7 @@ Full interactive docs: **http://localhost:8000/docs**
 
 ---
 
-## 🎤 Interview Q&A Prep
 
-**Q: What is RAG and why did you use it?**
-> RAG (Retrieval-Augmented Generation) grounds LLM responses in your actual documents instead of relying on training data. The system retrieves the top-5 most relevant document chunks using semantic search, then passes them as context to Gemini. This prevents hallucination and makes the AI factual and document-specific without expensive fine-tuning.
-
-**Q: How does FAISS work in your project?**
-> FAISS stores 384-dimensional embedding vectors for each document chunk. When a user asks a question, I convert the question to an embedding vector and FAISS performs approximate nearest-neighbor search using L2 distance. It finds the most semantically similar chunks in milliseconds, even with thousands of documents indexed.
-
-**Q: Why sentence-transformers instead of OpenAI embeddings?**
-> all-MiniLM-L6-v2 runs locally with no API cost, making it ideal for a project with limited budget. It produces high-quality 384-dim vectors and is fast on CPU. In production at scale, I'd evaluate OpenAI Ada-002 or Google's embedding models for potentially better quality.
-
-**Q: How does the chat memory work?**
-> LangChain's ConversationBufferWindowMemory stores the last 5 Q&A exchanges. Each new question includes this history as context in the prompt, allowing the model to understand follow-up questions like "Can you explain that further?" without losing context.
-
-**Q: What would you improve for production?**
-> JWT authentication with proper token expiry, streaming LLM responses for better UX, a cloud vector database (Pinecone/Weaviate) for persistence across deployments, multi-user session isolation, document versioning, and async document processing with a task queue like Celery.
 
 ---
 
