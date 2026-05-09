@@ -250,9 +250,3 @@ Full interactive docs: **http://localhost:8000/docs**
 ---
 
 
-
----
-
-## 📄 License
-
-MIT License — free to use for personal and commercial projects.
