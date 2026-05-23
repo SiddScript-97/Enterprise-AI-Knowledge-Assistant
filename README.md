@@ -224,29 +224,6 @@ streamlit run frontend/app.py
 | `DELETE` | `/documents` | Clear all documents |
 | `POST` | `/auth/login` | Authenticate → token |
 
-Full interactive docs: **http://localhost:8000/docs**
 
----
-
-## 💼 Resume Description
-
-### Short Version (for resume bullet points):
-> Built a **RAG-powered document Q&A system** using LangChain, FAISS, and Google Gemini API. Implemented semantic search with sentence-transformers embeddings, conversational memory, and source citations. Exposed via FastAPI REST API with Streamlit frontend.
-
-### Full Version (for resume projects section):
-
-**Enterprise AI Knowledge Assistant** | Python, LangChain, FAISS, FastAPI, Streamlit, Gemini API
-
-- Designed and built an end-to-end **RAG (Retrieval-Augmented Generation) pipeline** enabling conversational Q&A over uploaded PDF documents
-- Implemented **FAISS vector database** with sentence-transformers embeddings (all-MiniLM-L6-v2) for millisecond-level semantic similarity search across document chunks
-- Built **LangChain ConversationalRetrievalChain** with window-based memory to maintain context across multi-turn conversations
-- Developed **FastAPI REST backend** with 8 endpoints, dependency injection, Pydantic validation, and auto-generated Swagger documentation
-- Created **Streamlit frontend** with 5 pages: dashboard, document upload, chat assistant, semantic search explorer, and architecture overview
-- Implemented **source citation system** that traces every AI answer back to specific PDF pages
-- Deployed on Render.com with persistent FAISS vector store
-
-**Key Skills Demonstrated:** LLM APIs, RAG pipelines, vector databases, semantic search, embeddings, LangChain, FastAPI, Streamlit, REST APIs, Python
-
----
 
 
