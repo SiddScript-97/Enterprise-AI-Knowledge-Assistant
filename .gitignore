@@ -1,0 +1,11 @@
+venv/
+env/
+.env
+__pycache__/
+*.py[cod]
+data/
+*.faiss
+*.pkl
+.vscode/
+.idea/
+*.log
