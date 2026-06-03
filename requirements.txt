@@ -3,39 +3,38 @@
 # ============================================================
 
 # --- Core LLM & RAG Framework ---
-langchain==0.2.16
-langchain-community==0.2.16
-langchain-google-genai==1.0.10
-langchain-core==0.2.38
-
-# --- Google Gemini API ---
-google-generativeai==0.7.2
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-classic
+langchain-groq
 
 # --- Vector Database ---
-faiss-cpu==1.8.0
+faiss-cpu
 
 # --- Embeddings ---
-sentence-transformers==3.1.1
+sentence-transformers
 
 # --- PDF Processing ---
-pypdf==4.3.1
-pymupdf==1.24.10
+pypdf
+pymupdf
 
 # --- Backend API ---
-fastapi==0.115.0
-uvicorn[standard]==0.30.6
-python-multipart==0.0.9
-pydantic==2.9.1
-pydantic-settings==2.5.2
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+pydantic-settings
 
 # --- Frontend ---
-streamlit==1.38.0
-streamlit-chat==0.1.1
+streamlit
+streamlit-chat
 
 # --- Utilities ---
-python-dotenv==1.0.1
-httpx==0.27.2
-aiofiles==24.1.0
-numpy==1.26.4
-pillow==10.4.0
-tiktoken==0.7.0
+python-dotenv
+httpx
+aiofiles
+numpy
+pillow
+tiktoken
