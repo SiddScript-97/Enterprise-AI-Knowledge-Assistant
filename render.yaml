@@ -1,0 +1,46 @@
+# render.yaml
+# Deployment configuration for Render.com
+# Free tier available at: https://render.com
+#
+# Deploy steps:
+# 1. Push your code to GitHub
+# 2. Sign up at render.com → New → Web Service
+# 3. Connect your GitHub repo
+# 4. Set environment variables in Render dashboard
+# 5. Deploy!
+
+services:
+  # FastAPI Backend
+  - type: web
+    name: ai-knowledge-assistant-api
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false   # Set this manually in Render dashboard
+      - key: VECTOR_STORE_PATH
+        value: /tmp/vectorstore
+      - key: DEBUG
+        value: false
+      - key: AUTH_USERNAME
+        value: admin
+      - key: AUTH_PASSWORD
+        sync: false   # Set this manually in Render dashboard
+
+  # Streamlit Frontend (separate service)
+  - type: web
+    name: ai-knowledge-assistant-ui
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run frontend/app.py --server.port $PORT --server.headless true
+    envVars:
+      - key: BACKEND_URL
+        fromService:
+          name: ai-knowledge-assistant-api
+          type: web
+          property: host
